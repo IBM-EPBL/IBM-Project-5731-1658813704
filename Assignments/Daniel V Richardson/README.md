@@ -7,7 +7,7 @@
  100% Completed
 ```
 
-## [Demo of Assignment-3](https://daniel-v-richardson.github.io/profile/)
+## [Demo of Assignment-1](https://daniel-v-richardson.github.io/profile/)
 
 
 
