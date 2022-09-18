@@ -22,6 +22,7 @@
 ## ScreenShots: 
 - Home Page
 <img src="https://res.cloudinary.com/newztrakerapplication/image/upload/v1663510400/Assignment-2-Assets/home_wptjdc.png">
+<img src="https://res.cloudinary.com/newztrakerapplication/image/upload/v1663511145/Assignment-2-Assets/home1_ysxudd.png">
 
 - About Page
 <img src="https://res.cloudinary.com/newztrakerapplication/image/upload/v1663510398/Assignment-2-Assets/about_w7qj5k.png">
