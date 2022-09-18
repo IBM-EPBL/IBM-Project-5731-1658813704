@@ -3,8 +3,13 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
+# if ENV=='dev':
+#     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://admin:dan@localhost/posts'
+# else:
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgresql-concave-22234'
 db = SQLAlchemy(app)
+db.create_all()
 
 
 class BlogPost(db.Model):
@@ -23,28 +28,33 @@ class BlogPost(db.Model):
 def create_tables():
     db.create_all()
 
+
 @app.route('/')
 def home():
     all_posts = BlogPost.query.order_by(BlogPost.date_posted).all()
     return render_template('home.html', posts=all_posts)
 
-@app.route('/signup', methods=['GET','POST'])
+
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
         return redirect('/',)
     else:
         return render_template('signup.html')
 
-@app.route('/signin', methods=['GET','POST'])
+
+@app.route('/signin', methods=['GET', 'POST'])
 def signin():
     if request.method == 'POST':
         return redirect('/',)
     else:
         return render_template('signin.html')
 
+
 @app.route('/about')
 def about():
-    return render_template('about.html')    
+    return render_template('about.html')
+
 
 @app.route('/posts', methods=['GET', 'POST'])
 def posts():
@@ -53,7 +63,7 @@ def posts():
         post_content = request.form['content']
         post_author = request.form['author']
         new_post = BlogPost(title=post_title,
-                            content=post_content, 
+                            content=post_content,
                             author=post_author)
         db.session.add(new_post)
         db.session.commit()
@@ -62,10 +72,12 @@ def posts():
         all_posts = BlogPost.query.order_by(BlogPost.date_posted).all()
         return render_template('posts.html', posts=all_posts)
 
+
 @app.route('/allposts')
 def allposts():
     all_posts = BlogPost.query.order_by(BlogPost.date_posted).all()
-    return render_template('allposts.html',posts=all_posts)
+    return render_template('allposts.html', posts=all_posts)
+
 
 @app.route('/posts/delete/<int:id>')
 def delete(id):
@@ -74,9 +86,10 @@ def delete(id):
     db.session.commit()
     return redirect('/')
 
+
 @app.route('/posts/edit/<int:id>', methods=['GET', 'POST'])
 def edit(id):
-    
+
     post = BlogPost.query.get_or_404(id)
 
     if request.method == 'POST':
