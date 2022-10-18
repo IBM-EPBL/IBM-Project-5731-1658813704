@@ -1,0 +1,154 @@
+{% block head %}
+<title>Medium Clone</title>
+<link
+  href="https://fonts.googleapis.com/css?family=Open Sans"
+  rel="stylesheet"
+/>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans";
+  }
+
+  /* Header Starts */
+
+  .link {
+    text-decoration: none;
+    color: black;
+  }
+  .header-container {
+    height: 80px;
+    width: 100%;
+    z-index: 100;
+    background-color: #ffc017;
+    margin: auto;
+    position: fixed;
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid black;
+    display: flex;
+  }
+  .header-left {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header-right {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    margin-left: 390px;
+  }
+  .img {
+    height: 50px;
+    width: 190px;
+  }
+  .img img {
+    height: 100%;
+    width: 100%;
+  }
+  .header-right p {
+    font-size: 1.1rem;
+    padding-right: 20px;
+    font-weight: 600;
+  }
+  .get-started {
+    background-color: black;
+    border-radius: 29px;
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+  }
+  /* About part */
+
+  .about-container {
+    margin-top: 150px;
+  }
+  .about-subcontainer{
+    display: flex;
+    margin-bottom: 100px;
+    border-bottom: 1px solid black;
+  }
+
+  .about-left {
+    width: 50%;
+  }
+  .about-right {
+    width: 50%;
+  }
+  .about-heading {
+    width: 100%;
+    padding-bottom: 140px;
+    font-size: 8rem;
+    text-align: center;
+    border-bottom: 1px solid black;
+  }.about-left p {
+    font-size: 1.4rem;
+    padding: 20px;
+    text-align: justify;
+    border-right: 1px solid black;
+  }
+</style>
+{% endblock %} {% block body %}
+<!-- Header Part -->
+<div class="header-container">
+  <div class="header-left">
+    <div class="img">
+      <a href="/" class="link"
+        ><img
+          src="https://res.cloudinary.com/newztrakerapplication/image/upload/v1663466894/1_s986xIGqhfsN8U--09_AdA_sq3ok6.png"
+          alt="mediumclone.com"
+      /></a>
+    </div>
+  </div>
+
+  <div class="header-right">
+    <a href="/" class="link"><p>Home</p></a>
+    <a href="/about" class="link"><p>About Us</p></a>
+    <a href="/posts" class="link"><p>Write</p></a>
+    <a href="#" class="link"><p>Sign In</p></a>
+
+    <a href="#" class="link"><div class="get-started">Get Started</div></a>
+  </div>
+</div>
+<hr />
+<!-- About Starts -->
+<div class="about-container">
+  <div class="about-heading">Every idea needs a <strong>Medium.</strong></div>
+  <div class="about-subcontainer">
+    <div class="about-left">
+      <p>
+        The best ideas can change who we are. Medium is where those ideas take
+        shape, take off, and spark powerful conversations. We’re an open
+        platform where over 100 million readers come to find insightful and
+        dynamic thinking. Here, expert and undiscovered voices alike dive into
+        the heart of any topic and bring new ideas to the surface. Our purpose
+        is to spread these ideas and deepen understanding of the world.
+      </p>
+      <p>
+        We’re creating a new model for digital publishing. One that supports
+        nuance, complexity, and vital storytelling without giving in to the
+        incentives of advertising. It’s an environment that’s open to everyone
+        but promotes substance and authenticity. And it’s where deeper
+        connections forged between readers and writers can lead to discovery and
+        growth. Together with millions of collaborators, we’re building a
+        trusted and vibrant ecosystem fueled by important ideas and the people
+        who think about them.
+      </p>
+    </div>
+    <div class="about-right">
+      <iframe
+        src="https://player.vimeo.com/video/467834328?api=1&amp;background=1&amp;mute=1&amp;loop=1"
+        width="100%"
+        height="100%"
+        positioning="relative"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen=""
+      ></iframe>
+    </div>
+  </div>
+</div>
+{% endblock %}

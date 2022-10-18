@@ -1,0 +1,141 @@
+{% extends 'base.html' %} {% block head %}
+
+<title>Medium Clone</title>
+<link
+  href="https://fonts.googleapis.com/css?family=Open Sans"
+  rel="stylesheet"
+/>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans";
+  }
+  .link {
+    text-decoration: none;
+    color: black;
+  }
+  /* Header Starts */
+
+  .header-container {
+    height: 80px;
+    width: 100%;
+    z-index: 100;
+    background-color: #ffc017;
+    margin: auto;
+    position: fixed;
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid black;
+    display: flex;
+  }
+  .header-left {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header-right {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    margin-left: 390px;
+  }
+  .img {
+    height: 50px;
+    width: 190px;
+  }
+  .img img {
+    height: 100%;
+    width: 100%;
+  }
+  .header-right p {
+    font-size: 1.1rem;
+    padding-right: 20px;
+    font-weight: 600;
+  }
+  .get-started {
+    background-color: black;
+    border-radius: 29px;
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+  }
+  /* Signup Starts */
+
+  .signup-container{
+    margin-top: 150px!important;
+    border-radius: 27px;
+    width:60%;
+    height: 70%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .signup-heading{
+    text-align: center;
+    justify-content: center;
+    font-size: 4rem;
+    margin-top: -50px;
+  }
+  .signup-container input {
+    width: 100%;
+    text-align: left;
+    margin: auto;
+    border-radius: 27px;
+    padding: 20px;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    border: 1px solid blue;
+  }
+  .btn{
+    background-color: #ffc017;
+    border: none!important;
+    text-align: center!important;
+    font-weight: 900;
+    width: 100%;
+    cursor: pointer;
+    margin: auto!important;
+  }
+</style>
+
+{% endblock %} {% block body %}
+<!-- Header Part -->
+<div class="header-container">
+    <div class="header-left">
+      <a href="/" class="link"><div class="img">
+        <img
+          src="https://res.cloudinary.com/newztrakerapplication/image/upload/v1663466894/1_s986xIGqhfsN8U--09_AdA_sq3ok6.png"
+          alt="mediumclone.com"
+        /></a>
+      </div>
+    </div>
+    <div class="header-right">
+      <a href="/" class="link"><p>Home</p></a>
+      <a href="/about" class="link"><p>About Us</p></a>
+      <a href="/posts" class="link"><p>Write</p></a>
+      <a href="/login" class="link"><p>Sign In</p></a>
+  
+      <a href="/signup" class="link"><div class="get-started">Get Started</div></a>
+    </div>
+  </div>
+  <hr />
+
+  <!-- Signup Form Starts -->
+  <div class="signup-container">
+    <div class="signup-heading">Join Us</div>
+    <form action="/signup" method="POST" class="form">
+        <input type="text" name="name" id="name" placeholder="Enter your Full Name..">
+        <input type="email" name="email" id="email" placeholder="Enter your Email ID..">
+        <input type="password" name="password" id="password" placeholder="Enter your Password..">
+        <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm your Password..">
+        <input class="btn" type="submit" value="Signup" />
+    </form>
+  </div>
+{% endblock %}
