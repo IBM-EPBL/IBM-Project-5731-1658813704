@@ -1,13 +1,13 @@
 import http.client
 
-conn = http.client.HTTPSConnection("cricbuzz-cricket.p.rapidapi.com")
+conn = http.client.HTTPSConnection("crypto-news-live3.p.rapidapi.com")
 
 headers = {
-    'X-RapidAPI-Key': "50926b7c60mshe9177c6f3f8e9e9p1b755cjsn6e9ad935b336",
-    'X-RapidAPI-Host': "cricbuzz-cricket.p.rapidapi.com"
+    'X-RapidAPI-Key': "0010abfcf0mshe5d026c3f36953ep12b225jsn24bd5390cd38",
+    'X-RapidAPI-Host': "crypto-news-live3.p.rapidapi.com"
     }
 
-conn.request("GET", "/matches/v1/recent", headers=headers)
+conn.request("GET", "/news", headers=headers)
 
 res = conn.getresponse()
 data = res.read()
