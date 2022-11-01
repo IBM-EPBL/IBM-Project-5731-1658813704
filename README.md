@@ -1,4 +1,4 @@
-# Newizo (News Tracker Application: News on the Go)
+# Newzio (News Tracker Application: News on the Go)
 <img src="https://res.cloudinary.com/newztrakerapplication/image/upload/v1666162102/logo_aehult.png" height="100px" width="100px">
 
 
