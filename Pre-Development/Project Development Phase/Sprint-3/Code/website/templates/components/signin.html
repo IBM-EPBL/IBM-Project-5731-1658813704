@@ -1,0 +1,317 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    Newzio:SignIn
+    {% endblock %}
+</head>
+<link
+href="https://fonts.googleapis.com/css?family=Open Sans"
+rel="stylesheet"
+/>
+{% block styles %}
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+:root {
+  --primary-color: #9D4BFF;
+  --primary-color-dark: #23004D;
+  --primary-color-light: #A49EAC;
+  --primary-color-lighten: rgb(230, 230, 230);
+  --body-font: "Open Sans", sans-serif;
+  --h1-font-size: 1.5rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+  }
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  font-family: "Open Sans";
+  font-size: var(--normal-font-size);
+  color: var(--primary-color-dark);
+}
+/*Sign In Styling */
+
+h1 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 3rem;
+  display: block;
+}
+
+.login {
+  display: grid;
+  grid-template-columns: 100%;
+  height: auto;
+  margin: 0 1.5rem;
+}
+
+.login__content {
+  display: grid;
+}
+
+.login__img {
+  justify-self: center;
+}
+
+.login__img img {
+  width: 310px;
+  margin-top: 1.5rem;
+}
+
+.login__forms {
+  position: relative;
+  height: 368px;
+}
+
+.login__registre,
+.login__create {
+  position: absolute;
+  bottom: 1rem;
+  width: 600px;
+  height: 600px;
+  background: var(--primary-color-lighten);
+  padding: 2rem 1rem;
+  text-align: center;
+  border-radius: 2rem;
+  box-shadow: 0 8px 20px rgba(35, 0, 77, 0.2);
+  animation-duration: 0.4s;
+  animation-name: animate-login;
+}
+
+@keyframes animate-login {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+.login__title {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.login__box {
+  display: grid;
+  width: 90%;
+  border-radius: 2.5rem;
+  margin: auto;
+  grid-template-columns: max-content 1fr;
+  column-gap: 1.5rem;
+  padding: 1.125rem 1rem;
+  background-color: #fff;
+  margin-bottom: 2rem;
+}
+
+.login__icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.login__input {
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color-dark);
+}
+
+.login__input::placeholder {
+  font-family: inherit;
+  font-family: var(--body-font);
+  font-size: 1.5rem;
+  color: var(--primary-color-light);
+}
+
+
+
+.login__button {
+  display: block;
+  width: 60%;
+  border-radius: 2.5rem;
+  border: none;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.login__button:hover {
+  background-color: var(--primary-color-dark);
+}
+.last-text{
+  font-size: 1.3rem;
+}
+.login__account,
+.login__signin,
+.login__signup {
+  font-weight: 600;
+  font-size:1.2rem;
+}
+
+.login__account {
+  color: var(--primary-color-dark);
+}
+
+.login__signin,
+.login__signup {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .login__forms {
+    width: 346px;
+    justify-self: center;
+  }
+}
+@media (min-width: 1024px) {
+  .login {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .login__content {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    align-items: center;
+    margin-left: 10rem;
+  }
+
+  .login__img {
+    display: flex;
+    width: 600px;
+    height: 588px;
+    background: var(--primary-color-lighten);
+    border-radius: 3rem;
+  }
+
+  .login__img img {
+    width: 100%;
+    margin-top: 0;
+    background-size: cover;
+  }
+
+  .login__registre,
+.login__create {
+    left: -11rem;
+  }
+
+  .login__registre {
+    bottom: -9rem;
+  }
+
+  .login__create {
+    bottom: -5.5rem;
+  }
+}
+</style>
+{% endblock %}
+
+  {% block body %}
+    <!-- Login -->
+    <section class="login">
+            <div class="login__content">
+                <div class="login__img">
+                    <img src="https://i.pinimg.com/564x/20/41/99/2041995f89ba496e65e03a184bdd3904.jpg" alt="img">
+                </div>
+    
+                <div class="login__forms">
+                    <form method="POST" action=""onsubmit="return(validate())" class="login__registre" id="login-in" name="login">
+                        <h1 class="login__title">Sign In</h1>
+    
+                        <div class="login__box">
+                            <i class="fas fa-envelope login__icon"></i>
+                            <input type="email" placeholder="Email" name="email" class="login__input">
+                        </div>
+    
+                        <div class="login__box">
+                            <i class="fas fa-lock login__icon"></i>
+                            <input type="password" placeholder="Password" name="password"class="login__input">
+                        </div>
+                     
+                        <button type="submit" class="login__button">Sign In</button>
+    
+                        <div class="last-text">
+                            <span class="login__acount">Don't have an Account?</span>
+                            <a href="/register" class="link"><span class="login__signin" id="sign-up">Sign Up</span></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+      
+
+      {% block script %}
+      <script>  
+        function validate()
+        {
+            var emailID = document.login.email.value;
+            atpos = emailID.indexOf("@");
+            dotpos = emailID.lastIndexOf(".");
+            if (atpos < 1 || ( dotpos - atpos < 2 )) {
+                alert("Please enter correct email ID")
+                document.login.email.focus();
+                return false;
+             }
+             if(document.login.password.value.length < 3){
+                alert("Password Should have atleast 3 letters")
+                document.login.password.focus();
+                return false;
+             }
+             return( true );
+        }
+      </script>
+            
+    {% endblock %} 
+</html>
