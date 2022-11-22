@@ -5,6 +5,7 @@ import requests
 news = Blueprint('news', __name__)
 api_key = config('NEWS_API')
 
+
 @news.route('/home')
 def main():
     if not session:

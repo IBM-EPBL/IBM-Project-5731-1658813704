@@ -39,6 +39,13 @@
       text-decoration: none;
       color: white;
     }
+    .link1-small {
+      text-decoration: none;
+      color: white;
+    }
+    .link1-small:hover {
+      color: white;
+    }
     .link1:hover {
       color: white;
     }
@@ -77,6 +84,9 @@
       gap: 40px;
       justify-content: flex-end;
       align-items: center;
+    }
+    .nav-right-small {
+      display: none;
     }
     .nav-item {
       font-weight: 600;
@@ -130,7 +140,7 @@
       border-radius: 27px;
     }
     .search-submit {
-      margin-top: -10px!important;
+      margin-top: -10px !important;
       -webkit-transform: rotate(45deg);
       -moz-transform: rotate(45deg);
       -o-transform: rotate(45deg);
@@ -143,7 +153,56 @@
       background-color: Transparent;
       background-repeat: no-repeat;
       cursor: pointer;
-      font-size: 3rem!important;
+      font-size: 3rem !important;
+    }
+    @media screen and (max-width: 900px) {
+      .search-container {
+        display: none;
+      }
+      .nav-right {
+        gap: 10px;
+      }
+      .nav-left {
+        margin-left: 0px;
+      }
+      .logo-name {
+        font-size: 2rem;
+      }
+      .nav-right {
+        display: none;
+      }
+      .nav-right-small {
+        display: none;
+        width: 30%;
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      .left-container {
+        display: none;
+        width: 0%;
+      }
+      .right-container {
+        display: none;
+        width: 0%;
+      }
+      .middle-container {
+        width: 100% !important;
+      }
+      .card {
+        flex-direction: column;
+        padding: 0px;
+      }
+      .body-card {
+        width: 100%;
+      }
+      .read-more {
+        margin: auto;
+      }
+      .event__search__floater {
+        right: 43px!important;
+      }
     }
   </style>
   <body>
@@ -171,6 +230,135 @@
             <input class="search-submit" type="submit" value=" &#9906;" />
           </form>
         </div>
+        <style>
+
+          .event__search__floater {
+            position: fixed;
+            top: 70px;
+            right: -10px;
+            transition: all ease-in-out 0.2s;
+            transform: translate(-50%, -50%);
+          }
+
+          .search__anchor {
+            position: relative;
+            width: auto;
+            height: auto;
+          }
+          .search__submit {
+            opacity: 0;
+            width: 0px;
+          }
+          .search__bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            outline: none;
+            margin-top: -5px;
+            border: none;
+            background: rgb(0, 0, 0);
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            color: white;
+            opacity: 0;
+            z-index: 5;
+            transition: all 0.2;
+            font-size: 1em;
+          }
+          .search__bar:hover {
+            cursor: pointer;
+          }
+          .search__bar:focus {
+            width: 200px;
+            left: auto;
+            opacity: 1;
+            cursor: text;
+            transition: all 0.2;
+            padding-left: 25px;
+            padding-right: 70px;
+          }
+          .search__toggler {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: #ff9d00;
+            opacity: 1;
+            top: -4px;
+            left: -4px;
+            border-radius: 50%;
+            transition: all 0.2s;
+          }
+          .search__toggler:hover {
+            cursor: pointer;
+          }
+          .search__toggler::before {
+            content: "";
+            position: absolute;
+            margin: auto;
+            top: 22px;
+            right: 0;
+            bottom: 0;
+            left: 22px;
+            width: 12px;
+            height: 2px;
+            background: #fff;
+            transform: rotate(45deg);
+            transition: all 0.2s;
+          }
+          .search__toggler::after {
+            content: "";
+            position: absolute;
+            margin: auto;
+            top: -5px;
+            right: 0;
+            bottom: 0;
+            left: -5px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            transition: all 0.2s;
+          }
+          .search__bar:focus ~ .search__toggler {
+            right: 400px;
+            background: #151515;
+            z-index: 6;
+            transition: all 0.2;
+          }
+          .search__bar:focus ~ .search__toggler::before {
+            top: 0;
+            left: 0;
+            width: 25px;
+          }
+          .search__bar:focus ~ .search__toggler::after {
+            top: 0;
+            left: 0;
+            width: 25px;
+            height: 2px;
+            border: none;
+            background: white;
+            border-radius: 0%;
+            transform: rotate(-45deg);
+          }
+          
+        </style>
+        <div class="event__search__floater">
+          <div class="search__anchor">
+            <form id="event-search-form" action="/search" method="GET">
+              <input
+                type="text"
+                class="search__bar"
+                placeholder="Search News..."
+                name="q"
+              />
+              <input class="search__submit" type="submit" />
+              <div class="search__toggler"></div>
+            </form>
+          </div>
+        </div>
       </div>
       <div class="nav-right">
         <a href="/" class="link1">
@@ -186,6 +374,22 @@
           <div class="nav-item register">Logout</div>
         </a>
       </div>
+      <!-- Small Icons -->
+      <div class="nav-right-small">
+        <a href="/" class="link1-small">
+          <i class="fa-solid fa-house"></i>
+        </a>
+        <a href="/categories" class="link1-small">
+          <i class="fa-solid fa-rectangle-list"></i>
+        </a>
+        <a href="/" class="link1-small">
+          <i class="fa-solid fa-bolt"></i>
+        </a>
+        <a href="/logout" class="link1">
+          <div class="nav-item register">Logout</div>
+        </a>
+      </div>
     </div>
+    {% include 'watson.html' %}
   </body>
 </html>

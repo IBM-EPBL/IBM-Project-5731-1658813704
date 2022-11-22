@@ -120,53 +120,56 @@
       background-color: rgb(127, 255, 191);
       border-radius: 27px;
     }
-   
-    /* Search Styling Here*/
-    .search-container {
-      height: 60%;
-      width: 60%;
-      border-radius: 27px;
-      justify-content: center;
-      background-color: white;
-      margin-top: 14px !important;
-      margin: auto;
-    }
-    .search-form {
-      align-items: center;
-      margin: auto;
-      display: flex;
-      height: 100%;
-      width: 100%;
-    }
-    .search-input-wrapper {
-      height: 100%;
-      width: 100%;
-    }
-    .search-input {
-      height: 100%;
-      width: 100%;
-      outline: none;
-      font-size: 1.3rem;
-      border: none;
-      padding: 10px;
-      margin: auto;
-      border-radius: 27px;
-    }
-    .search-submit {
-      margin-top: -10px !important;
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg);
-      border: none;
-      color: #000;
-      border-radius: 27px;
-      outline: none;
-      align-items: center;
-      background-color: Transparent;
-      background-repeat: no-repeat;
-      cursor: pointer;
-      font-size: 3rem !important;
+    @media screen and (max-width:900px) {
+      .login__img{
+        margin-top: 50px;
+      }
+      .logo-name{
+        font-size: 2rem;
+      }
+      .nav-left{
+        margin-left: 0px;
+      }
+      .nav-left img {
+        height: 60%;
+        margin: auto;
+        width: 30%;
+      }
+      .login__registre, .login__create {
+        width: 100%;
+        height: 100%;
+      }
+      .login__registre {
+        bottom: 20rem;
+      }
+      .login__create {
+        bottom: 20rem;
+      }
+      .login__title{
+        font-size: 2rem;
+      }
+      .login__box{
+        width: 100%;
+        padding: 0.725rem 0.9rem;
+      }
+      .login__icon{
+        font-size: 1.3rem;
+        margin: auto;
+      }
+      .login__input{
+        font-size: 1.2rem;
+      }
+      .login__input::placeholder{
+        font-size: 1.2rem;
+      }
+      .login__button {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+      }
+      .last-text{
+        font-size: 1.2rem;
+        color: white;
+      }
     }
   </style>
   <body>
