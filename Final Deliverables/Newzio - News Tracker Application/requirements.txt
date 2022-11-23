@@ -13,8 +13,6 @@ newsapi-python==0.2.6
 requests==2.26.0
 urllib3==1.26.6
 Werkzeug==2.0.1
-decouple
+python-decouple
 ibm_db
 python-dotenv
-hashlib
-os
