@@ -7,7 +7,7 @@
 
 <img  src="https://res.cloudinary.com/newztrakerapplication/image/upload/v1663078704/news-tracker-horizontal-487x192_xbv74e.png">
 
-## [Demo of App]:[(Updated Soon)]()
+## Demo of App: https://youtu.be/tWbdVOZEuKc
 
 ## Source
    <a href="https://github.com/IBM-EPBL/IBM-Project-5731-1658813704/tree/master/Final%20Deliverables/Newzio%20-%20News%20Tracker%20Application" target = "_blank">CLICK HERE</a>
