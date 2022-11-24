@@ -4,9 +4,6 @@
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)                 
 [![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-360/)   
-
-<img  src="https://res.cloudinary.com/newztrakerapplication/image/upload/v1663078704/news-tracker-horizontal-487x192_xbv74e.png">
-
 ## Demo of App: https://youtu.be/tWbdVOZEuKc
 
 ## Source
